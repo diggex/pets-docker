@@ -1,0 +1,20 @@
+version : '3.8'
+services:
+  pets-php: 
+    container_name: pets-php
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - "../pets-api:/var/www/html/api"
+  pets-nginx:
+    container_name: pets-nginx
+    build:
+       context: ./nginx
+       dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - "../pets-ui/build:/home/projects/demo"
