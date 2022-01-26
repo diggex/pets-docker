@@ -28,5 +28,5 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         known_hosts: ${{ secrets.REMOTE_HOST }} 
     - name: Execute Script
-      run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} '/bin/bash deploy.sh start'
+      run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} 'cd ${{ secrets.TARGET_DIR }} && /bin/bash deploy.sh start'
 
