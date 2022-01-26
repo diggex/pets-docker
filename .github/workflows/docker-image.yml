@@ -23,5 +23,5 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: ${{ secrets.TARGET_DIR }}
     - name: Execute test Script
-      run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} /bin/bash ./bin/deploy.sh start
+      run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} '/bin/bash ./bin/deploy.sh start'
 
