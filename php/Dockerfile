@@ -88,10 +88,5 @@ COPY ./conf/default.conf /etc/apache2/sites-enabled/000-default.conf
 # Apache config
 RUN cd /etc/apache2/mods-enabled && ln -s ../mods-available/rewrite.load rewrite.load
 
-# Proxy config
 
-Run echo "export http_proxy='http://proxy.emea.ibm.com:8080" >> /root/.bashrc
-Run echo "export https_proxy='http://proxy.emea.ibm.com:8080" >> /root/.bashrc
-
-# SSH key
-WORKDIR /var/www/html/
+WORKDIR /var/www/html/api
